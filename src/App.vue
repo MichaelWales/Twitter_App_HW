@@ -1,20 +1,22 @@
 <template lang="html">
   <div id="app">
-    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&family=Viga&display=swap" rel="stylesheet">
 
-    <header>
+    <header id="banner">
       <img src="../src/assets/clipart669455.png" width="175" height="100">
       <h1>T'wit-T'wooer</h1>
-      <h3>Total T'wit-T'woos => {{totalTweets}}!</h3>
+      <img src="../src/assets/clipart669455.png" width="175" height="100">
     </header>
-
-    <div id="filterTweets">
-      <h3>Filter by Likes  <input type="number" v-model.number="filterAmount"></h3>
+    <br>
+    <div id="totalTweets">
+      <h3>Total T'wit-T'woos => {{totalTweets}}!</h3>
     </div>
 
+    <div id="filterTweets">
+      <h3>Filter by Likes:  <input type="number" v-model.number="filterAmount"></h3>
+    </div>
     <br>
-
-    <twitter-tweet v-for="(tweet, index) in filteredTweets" :key="index" :tweet="tweet"></twitter-tweet>
+    <twitter-tweet id="tweets" v-for="(tweet, index) in filteredTweets" :key="index" :tweet="tweet"></twitter-tweet>
 
   </div>
 </template>
@@ -74,14 +76,36 @@ export default {
 
 header {
   font-family: 'Viga';
-}
-
-#filterTweets {
-  font-family: 'Viga';
+  display: flex;
+  justify-content: center;
 }
 
 #app {
-  font-family: 'Viga';
+  font-family: 'M PLUS Rounded 1c';
+  font-weight: 700;
+  border-style: groove;
+  border-width: 10px;
+  border-color: lightblue;
+  margin: 10px;
+  padding: 20px;
+  background-color: #558075;
+  color: white;
+  max-width: 600px;
+}
+
+#tweets {
+  border-style: ridge;
+  border-width: 5px;
+  border-color: lightblue;
+  padding: 20px;
+  background-color: #3b5a52;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#totalTweets, #filterTweets {
+  display: flex;
+  justify-content: center;
 }
 
 </style>

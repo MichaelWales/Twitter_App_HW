@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-    <img v-bind:src="tweet.img" width="40" height="40" v-bind:title="tweet.name">
+    <img id="avatar" v-bind:src="tweet.img" width="40" height="40" v-bind:title="tweet.name">
     <p>{{tweet.name}} {{tweet.handle}}</p>
     <p>"{{tweet.tweet}}"</p>
     <p>Likes: {{tweet.likes}}</p>
